@@ -18,6 +18,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 2;
 }
 
 header .container {
@@ -35,6 +36,19 @@ header nav ul {
 header nav ul li {
     display: inline-block;
     padding: 10px;
+}
+
+header nav ul li a:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    transition: 0.5s;
+}
+
+header nav ul li:hover a:after {
+    width: 100%;
 }
 
 header nav ul li a {
@@ -56,12 +70,12 @@ header nav ul li a {
     text-transform: uppercase;
     display: inline-block;
     text-decoration: none;
-    transition: all 0.5s ;
+    transition: all 0.5s;
 }
 
 .btn-primary:hover {
     background-color: #f5d235;
-    color: #000;    
+    color: #000;
 }
 
 main {
@@ -196,3 +210,20 @@ main h1 {
     height: 300px;
 }
 
+@keyframes flutuar {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.img-destaque {
+    animation: flutuar 3s infinite;
+}
